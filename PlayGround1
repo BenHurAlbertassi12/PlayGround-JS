@@ -1,0 +1,173 @@
+// Desafio 1
+function compareTrue(abc, def) {
+  // seu código aqui
+  if (abc === true && def === true) {
+    //o if vai comparar as variaveis boleanas e retorna true, caso não false
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Desafio 2
+function calcArea(base, height) {
+  //adição das strings.
+  // seu código aqui
+  return (base * height) / 2; //desenho do calculo [ (b*a)/2 ].
+}
+
+// Desafio 3
+function splitSentence(teste) {
+  // seu código aqui
+  return teste.split(' ');
+}
+
+//documentação *https://www.w3schools.com/jsref/jsref_split.asp*
+
+// Desafio 4
+function concatName(lugar) {
+  let ultimoArrey = lugar.length - 1; //separando a ultima string. em uma variavel
+  let primeiroArrey = lugar[ultimoArrey]; //definindo o valor da primeiroarrey com a posição do ultimoArrey
+
+  posicaoExercicio = primeiroArrey.concat(', ', lugar[0]);
+  //a variavel posicaoExercicio vai receber a concatenação da variavel primeiroArrey na posição 0 'lugar[0]' apos a adição ,
+
+  return posicaoExercicio;
+  0;
+
+  //documentos
+  //https://www.w3schools.com/jsref/jsref_length_array.asp
+  //https://www.w3schools.com/jsref/jsref_concat_array.asp
+  //https://app.betrybe.com/course/fundamentals/introducao-a-javascript-e-logica-de-programacao/javascript-array-e-loop-for-gabarito/solutions/654ae39e-e91c-4b83-9c68-31340648a90c/gabarito-dos-exercicios/ae13cc80-dcf8-4ed7-abb8-237c424e95e5?use_case=calendar
+}
+
+// Desafio 5
+function footballPoints(wins, ties) {
+  // seu código aqui
+  return wins * 3 + ties; //basicamente a montagem do calculo x*3+y= resultado
+}
+
+// Desafio 6
+
+function highestCount(mNumeros) {
+  // seu código aqui
+  // let maiorNumero = Math.max.apply(null, mNumeros);
+  // let vezesNrepete = 0;
+  let maiornumero = mNumeros[0];
+  let testevar = 0;
+
+  for (indexM = 0; indexM < mNumeros.length; indexM++) {
+    // comando for para percorrer o mNumeros
+    if (mNumeros[indexM] > maiornumero) {
+      //separando o maior numero, havia usado o Math, entretanto acho que errei a sintaxe e quando botei o novo codigo foi
+      maiornumero = mNumeros[indexM]; //adcionando o maior nummero a variavel
+    }
+  }
+
+  for (index = 0; index < mNumeros.length; index++) {
+    //comando para percorrer o mNumeros
+    if (maiornumero == mNumeros[index]) {
+      //condição para ver quantas vezes o maior numero aparece
+      testevar = testevar + 1; //somando a variavel
+    }
+  }
+  return testevar; //retorno da variavel
+}
+
+// Desafio 7
+function catAndMouse(mouse, cat1, cat2) {
+  // seu código aqui
+
+  if (cat1 - mouse > cat2 - mouse) {
+    //condição if para ver quem esta mais perto do rato.
+    // caso a primeira operação for maior que a operação 2 ela retorna no gato2
+    return 'cat2';
+  } else if (mouse - cat1 == cat2 - mouse) {
+    //condição if para ver quem esta mais perto do rato.
+    //se a primeira operação for igual (apenas caracteres) a operação 2 ela retorna a frase
+    return 'os gatos trombam e o rato foge';
+  } else if (cat1 - mouse < cat2 - mouse) {
+    //condição if para ver quem esta mais perto do rato.
+    //sendo a primeira operação menor que a operação 2 ela retorna no gato1
+    return 'cat1';
+  }
+}
+
+// Desafio 8
+function fizzBuzz() {
+  // seu código aqui
+}
+
+// Desafio 9
+function encode(caracteres) {
+  // seu código aqui
+  let newCode = ''; //definindo a variavel obs. o codigo só aceitou as '' sem o esta com espaço ' '
+  for (let index = 0; index < caracteres.length; index++) {
+    //Comando for para percorrer todo o caminho escolhido, no caso a 'frase'.
+    if (caracteres[index] === 'a') {
+      //condição if para dizer que se a posição da frase for exatamente igual a letra escolhida (a)
+      newCode = newCode + '1'; // vai substituir a letra na variavel novocodigo a pelo numero (1)
+    } else if (caracteres[index] === 'e') {
+      //condição 'se não' ele pula para a proxima vogal (e)
+      newCode = newCode + '2'; // e substitue pelo numero 2
+    } else if (caracteres[index] === 'i') {
+      //condição 'se não' ele pula para a proxima vogal (i)
+      newCode = newCode + '3'; // e substitue pelo numero 3
+    } else if (caracteres[index] === 'o') {
+      //condição 'se não' ele pula para a proxima vogal (o)
+      newCode = newCode + '4'; // e substitue pelo numero 4
+    } else if (caracteres[index] === 'u') {
+      //condição 'se não' ele pula para a proxima vogal (u)
+      newCode = newCode + '5'; // e substitue pelo numero 5
+    } else {
+      newCode = newCode + caracteres[index]; //termina a operação
+    }
+  }
+  return newCode; //retorna o novocodigo pela variavel newCode
+}
+
+function decode(caracteres) {
+  // seu código aqui
+  let newCode = ''; //definindo a variavel obs. o codigo só aceitou as '' sem o esta com espaço ' '
+  for (let index = 0; index < caracteres.length; index++) {
+    //Comando for para percorrer todo o caminho escolhido, no caso a 'frase'.
+    if (caracteres[index] === '1') {
+      //condição if para dizer que se a posição da frase for exatamente igual ao caractere selecionado (1)
+      newCode = newCode + 'a'; // vai substituir a letra na variavel novocodigo a pelo caractere (a)
+    } else if (caracteres[index] === '2') {
+      //condição 'se não' ele pula para o proximo caractere (e)
+      newCode = newCode + 'e'; // substitue pelo letra e
+    } else if (caracteres[index] === '3') {
+      //condição 'se não' ele pula para o proximo caractere (i)
+      newCode = newCode + 'i'; // substitue pelo numero 3
+    } else if (caracteres[index] === '4') {
+      //condição 'se não' ele pula para o proximo caractere (o)
+      newCode = newCode + 'o'; // substitue pelo numero 4
+    } else if (caracteres[index] === '5') {
+      //condição 'se não' ele pula para o proximo caractere (o)
+      newCode = newCode + 'u'; // substitue pelo numero 5
+    } else {
+      newCode = newCode + caracteres[index];
+    }
+  }
+  return newCode;
+}
+
+// Desafio 10
+function techList() {
+  // seu código aqui
+}
+
+module.exports = {
+  calcArea,
+  catAndMouse,
+  compareTrue,
+  concatName,
+  decode,
+  encode,
+  fizzBuzz,
+  footballPoints,
+  highestCount,
+  splitSentence,
+  techList,
+};
